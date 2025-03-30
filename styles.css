@@ -1,0 +1,449 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-image: url('C:/Users/hp/OneDrive/Desktop/Project/Image/back.jpg');
+     background-size: cover; /* Ensures the image covers the entire screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the image fixed while scrolling */
+}
+
+header {
+    background-color: transparent;
+    padding: 15px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ff4db8;
+}
+
+.main-container {
+    display: flex;
+    justify-content: rigth;
+    align-items: center;
+    min-height: calc(100vh - 54px);
+    padding: 20px;
+    gap: 20px;
+}
+
+.intro-text {
+    max-width: 500px;
+}
+
+.welcome-text {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.name-heading {
+    color: #ff4db8;
+    font-size: 60px;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.description {
+    color: white;
+    font-size: 24px;
+    line-height: 1.5;
+}
+.section {
+    display: none; /* Hide all sections by default */
+    padding: 20px;
+}
+
+#home {
+    display: block; /* Show only the home section initially */
+}
+
+.section.active {
+    display: block;  /* Show only the active section */
+}
+
+
+/* Profile Container with Carousel */
+.profile-container {
+    position: absolute;
+    top: 50%; /* Adjust based on background hand */
+    left: 70%; /* Moves it towards the right */
+    transform: translate(-50%, -50%); /* Centers it correctly */
+    width: 300px;
+}
+
+/* Carousel Styling */
+.carousel {
+    width: 250px;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 3px solid white;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(255, 77, 184, 0.6);
+}
+
+/* Track & Slide Transitions */
+.carousel-track {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+}
+
+/* Profile Images */
+.profile-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 8px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.indicator:hover {
+    transform: scale(1.2);
+}
+
+.indicator.active {
+    background-color: #ff4db8;
+}
+
+/* Smooth Auto-Sliding */
+@keyframes slide {
+    0%, 100% { transform: translateX(0%); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+}
+
+.carousel-track {
+    animation: slide 9s infinite ease-in-out;
+}
+
+/* Glow Effect */
+.profile-glow {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 20px;
+    border: 2px solid #a64dff;
+    box-shadow: 0 0 20px #a64dff;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .profile-container {
+        left: 70%; /* Adjust position on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        position: relative;
+        left: 50%;
+        top: auto;
+        transform: translateX(-50%);
+        margin-top: 20px;
+    }
+
+    .carousel {
+        width: 280px;
+    }
+}
+
+
+/* Portfolio Section */
+#portfolio {
+    display: none; /* Hidden by default */
+    padding: 100px 20px 50px;
+    text-align: center;
+    background-image: url('C:/Users/hp/OneDrive/Desktop/Project/Image/brain1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;    
+    color: white;
+    height: 100vh;
+}
+
+/* Section Title */
+#portfolio h2 {
+    font-size: 36px;
+    color: #ff4db8;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+}
+
+/* Buttons for Brain Master Challenge */
+.challenge-section {
+    display: flex;
+    flex-direction: column; /* Makes buttons stack vertically */
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 200px; /* Space below the title */
+    margin-left: 300px; /* Move this left as needed */
+}
+.challenge-section button {
+    background-color: #ff4db8;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    white-space: nowrap; /* Prevents buttons from wrapping */
+}
+
+.challenge-section button:hover {
+    background-color: #d13aa8;
+    transform: scale(1.05);
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    #portfolio {
+        padding: 80px 15px 30px;
+    }
+
+    .challenge-section {
+        flex-wrap: wrap; /* Allows stacking on smaller screens */
+        justify-content: center;
+    }
+
+    .challenge-section button {
+        width: auto;
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+.section {
+    display: none; /* Hide sections initially */
+    padding: 20px;
+    color: white;
+    font-size: 2em;
+    margin-top: 40px;
+}
+
+#favorites {
+    display: block; /* Show only the selected section */
+}
+.gallery-header{
+   color: white;
+}
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 50px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+/* Artwork Containers */
+.artwork-container {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.artwork-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.artwork {
+    position: relative;
+    padding-top: 50px;
+}
+
+.artwork-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.artwork-container:hover .artwork-image {
+    transform: scale(1.05);
+}
+
+.grey {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.boldy {
+    font-weight: 600;
+    font-size: 18px;
+    color: #333;
+}
+
+.heart1 {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.heart1:hover {
+    background: white;
+}
+
+.tosmall {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s;
+}
+
+.heart1:hover .tosmall {
+    transform: scale(1.2);
+}
+
+/* Comments Section */
+.comments-section {
+    padding: 15px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.comment-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.comment-input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.comment-input:focus {
+    outline: none;
+    border-color: #9c7a5a;
+}
+
+.comment-box button {
+    background-color: #9c7a5a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.comment-box button:hover {
+    background-color: #876a4d;
+}
+
+.comments-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.comments-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    
+    .nav-links {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        width: 100%;
+        justify-content: space-between;
+    }
+}

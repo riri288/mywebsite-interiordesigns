@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rica Mamac - Digital Designer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" onClick="showSection('home')">Home</a>
+            <a href="#" onclick="showSection('portfolio')">Portfolio</a>
+            <a href="#" onclick="showSection('favorites')">Favorites</a>
+        </nav>
+    </header>
+
+    <!-- HOME SECTION -->
+    <section id="home" class="section active">
+        <div class="main-container">
+            <div class="intro-text">
+                <h1 class="name-heading">Hi! I'm Rica Mamac</h1>
+                <p class="description">I'm a digital designer and illustrator passionate about crafting engaging visual experiences.</p>
+            </div>
+            <div class="profile-container">
+                <div class="carousel">
+                    <div class="carousel-track">
+                        <div class="carousel-slide"><img class="profile-image" src="C:/Users/hp/OneDrive/Desktop/Project/Image/pic1.jpg" alt="Slide 1"></div>
+                        <div class="carousel-slide"><img class="profile-image" src="C:/Users/hp/OneDrive/Desktop/Project/Image/pic3.jpg" alt="Slide 2"></div>
+                        <div class="carousel-slide"><img class="profile-image" src="C:/Users/hp/OneDrive/Desktop/Project/Image/pic5.jpg" alt="Slide 3"></div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="section">
+        <div class="challenge-section">
+            <button onclick="temperatureConverter()">1. Temperature Converter</button>
+            <button onclick="longerWord()">2. The Longer Word</button>
+            <button onclick="knowMyBirthstone()">3. Know My Birthstone</button>
+            <button onclick="basicMathOperations()">4. Basic Math Operations</button>
+            <button onclick="computeAcceleration()">5. Compute for Acceleration</button>
+        </div>
+    </section>
+
+    <!-- FAVORITES SECTION -->
+    <section id="favorites" class="section">
+    <h1>Interior Design</h1>
+    <div id="art-exhibit">
+        
+        <!-- Artwork 1 -->
+        <div class="artwork-container">
+                   
+        <div class="gallery-container">
+       	 <div class="gallery-grid">
+            <div class="artwork-container">
+                <div id="artwork-1" class="artwork">
+                    <img src='C:/Users/hp/OneDrive/Desktop/Project/Image/arch1.jpg' alt="Modern living room with open kitchen" class="artwork-image">
+                    <div class="grey"><span class="boldy">Art 1</span><br> by Shilo</div>
+                    <div class="heart1" onclick="toggleLike(this)"><img src="image/heart.png" class="tosmall"></div>
+                </div>
+                <div class="comments-section">
+                    <div class="comment-box">
+                        <input type="text" class="comment-input" placeholder="Add a comment..." onkeypress="if(event.key === 'Enter') addComment(this.nextElementSibling)">
+                        <button onclick="addComment(this)">Post</button>
+                    </div>
+                    <ul class="comments-list"></ul>
+                </div>
+            </div>
+
+            <div class="artwork-container">
+                <div id="artwork-3" class="artwork">
+                    <img src="C:/Users/hp/OneDrive/Desktop/Project/Image/arch3.jpg" alt="Bright living room with white sofas" class="artwork-image">
+                    <div class="grey"><span class="boldy">Art 3</span><br> by Blissy</div>
+                    <div class="heart1" onclick="toggleLike(this)"><img src="images/heart.png" class="tosmall"></div>
+                </div>
+                <div class="comments-section">
+                    <div class="comment-box">
+                        <input type="text" class="comment-input" placeholder="Add a comment..." onkeypress="if(event.key === 'Enter') addComment(this.nextElementSibling)">
+                        <button onclick="addComment(this)">Post</button>
+                    </div>
+                    <ul class="comments-list"></ul>
+                </div>
+            </div>   
+            <div class="artwork-container">
+                <div id="artwork-3" class="artwork">
+                    <img src="C:/Users/hp/OneDrive/Desktop/Project/Image/arch4.jpg" alt="Bright living room with white sofas" class="artwork-image">
+                    <div class="grey"><span class="boldy">Art 3</span><br> by Blissy</div>
+                    <div class="heart1" onclick="toggleLike(this)"><img src="images/heart.png" class="tosmall"></div>
+                </div>
+                <div class="comments-section">
+                    <div class="comment-box">
+                        <input type="text" class="comment-input" placeholder="Add a comment..." onkeypress="if(event.key === 'Enter') addComment(this.nextElementSibling)">
+                        <button onclick="addComment(this)">Post</button>
+                    </div>
+                    <ul class="comments-list"></ul>
+                </div>
+            </div>
+            
+            <div class="artwork-container">
+                <div id="artwork-4" class="artwork">
+                    <img src="C:/Users/hp/OneDrive/Desktop/Project/Image/arch5.jpg" alt="Living space with large windows" class="artwork-image">
+                    <div class="grey"><span class="boldy">Art 4</span><br> by Mirah</div>
+                    <div class="heart1" onclick="toggleLike(this)"><img src="images/heart.png" class="tosmall"></div>
+                </div>
+                <div class="comments-section">
+                    <div class="comment-box">
+                        <input type="text" class="comment-input" placeholder="Add a comment..." onkeypress="if(event.key === 'Enter') addComment(this.nextElementSibling)">
+                        <button onclick="addComment(this)">Post</button>
+                    </div>
+                    <ul class="comments-list"></ul>
+                </div>
+            </div>
+            
+            <div class="artwork-container">
+                <div id="artwork-5" class="artwork">
+                    <img src='C:/Users/hp/OneDrive/Desktop/Project/Image/arch6.jpg' alt="Modern minimal interior design" class="artwork-image">
+                    <div class="grey"><span class="boldy">Art 5</span><br> by Miru</div>
+                    <div class="heart1" onclick="toggleLike(this)"><img src="images/heart.png" class="tosmall"></div>
+                </div>
+                <div class="comments-section">
+                    <div class="comment-box">
+                        <input type="text" class="comment-input" placeholder="Add a comment..." onkeypress="if(event.key === 'Enter') addComment(this.nextElementSibling)">
+                        <button onclick="addComment(this)">Post</button>
+                    </div>
+                    <ul class="comments-list"></ul>
+                </div>
+            </div>
+            
+            <div class="artwork-container">
+                <div id="artwork-6" class="artwork">
+                    <img src='C:/Users/hp/OneDrive/Desktop/Project/Image/arch7.jpg' alt="Contemporary living space" class="artwork-image">
+                    <div class="grey"><span class="boldy">Art 6</span><br> by Toggler</div>
+                    <div class="heart1" onclick="toggleLike(this)"><img src="images/heart.png" class="tosmall"></div>
+                </div>
+                <div class="comments-section">
+                    <div class="comment-box">
+                        <input type="text" class="comment-input" placeholder="Add a comment..." onkeypress="if(event.key === 'Enter') addComment(this.nextElementSibling)">
+                        <button onclick="addComment(this)">Post</button>
+                    </div>
+                    <ul class="comments-list"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
